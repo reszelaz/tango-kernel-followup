@@ -53,7 +53,8 @@ There are strong suspicions on the python GIL.
 Jairo Moldes and Tiago Coutinho are trying to reimplement DeviceProxy in order to force the release of the GIL while unsubscribing.
 It might take a while before getting this fix.
 
-Taurus code has been changed to reuse DeviceProxy objects to avoid calling DeviceProxy destructor too often. 
+Sardana code has been [changed](https://github.com/sardana-org/sardana/pull/1302) to avoid creation of AttributeProxy objects to avoid calling DeviceProxy destructor too often.
+(not 100 % sure if these two issues are related or if we were hitting another bug).
 
 Anton could not work on pybind11 rebasing/merging work yet.
 
